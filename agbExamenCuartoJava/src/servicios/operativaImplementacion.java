@@ -146,7 +146,7 @@ public class operativaImplementacion implements operativaInterfaz {
 			System.out.println("Escriba la fecha y hora a la que quiere la cita");
 			String fechaDada = sc.next();
 			try {
-				DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH");
+				DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH");
 				LocalDate fecha = LocalDate.parse(fechaDada, formato);
 
 				nuevaCitasDtos.setFechaCita(fecha);

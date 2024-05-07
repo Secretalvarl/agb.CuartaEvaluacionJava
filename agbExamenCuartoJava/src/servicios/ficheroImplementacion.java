@@ -43,8 +43,9 @@ public class ficheroImplementacion implements ficheroInterfaz {
 					}
 				}
 				
-				escribir.close();
+				
 			}
+			escribir.close();
 
 		} catch (Exception e) {
 
@@ -63,10 +64,10 @@ public class ficheroImplementacion implements ficheroInterfaz {
 		System.out.println("Escriba la fecha final");
 		String fechaFinal = sc.next();
 
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate fecha = LocalDate.parse(fechaInicio, formato);
 
-		DateTimeFormatter formato2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formato2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate fecha2 = LocalDate.parse(fechaFinal, formato);
 
 		for (clientesDtos buscarDni : listaClientes) {
@@ -75,7 +76,7 @@ public class ficheroImplementacion implements ficheroInterfaz {
 				
 				for(citasDtos buscarCitasDtos : listaCitas) {
 					
-					if(fechaInicio >= buscarCitasDtos.getFechaCita() && fechaFinal <= buscarCitasDtos.getFechaCita()) {
+					if(fechaInicio => buscarCitasDtos.getFechaCita() && fechaFinal <= buscarCitasDtos.getFechaCita()) {
 						
 						System.out.println(buscarCitasDtos.getFechaCita() + buscarCitasDtos.getEspecialidad());
 					}else {
